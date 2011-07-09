@@ -1,6 +1,8 @@
 # ovh-clj
 
-A Clojure Library for the OVH Web Services.
+Clojure Library for the OVH Web Services.
+
+http://www.ovh.com/soapi/en/
 
 ## License
 
