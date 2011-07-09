@@ -1,13 +1,9 @@
-# ovh
+# ovh-clj
 
-FIXME: write description
-
-## Usage
-
-FIXME: write
+A Clojure Library for the OVH Web Services.
 
 ## License
 
-Copyright (C) 2011 FIXME
+Copyright (C) 2011 Roman Scherer
 
 Distributed under the Eclipse Public License, the same as Clojure.
