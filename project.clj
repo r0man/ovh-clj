@@ -1,5 +1,5 @@
 (defproject ovh "0.0.1-SNAPSHOT"
-  :description "Clojure Library for the OVH Web Services"
+  :description "Clojure Library for the OVH Web Services."
   :dependencies [[axis/axis "1.4"]
                  [org.clojure/clojure "1.2.1"]]
   :dev-dependencies [[lein-axis "0.1.1"]]
