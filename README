@@ -1,8 +1,56 @@
 # ovh-clj
 
-Clojure Library for the OVH Web Services.
+Clojure Library for a tiny part of the OVH Web Services.
 
 http://www.ovh.com/soapi/en/
+
+## Installation
+
+Via Clojars: http://clojars.org/ovh.
+
+## Usage:
+
+(use 'ovh.core)
+
+;; Add a zone entry.
+
+(with-session ["SRXXXXX-OVH" "SECRET"]
+   (add-zone-entry "example.com" "api" "CNAME" "ec2-90-27-11-202.compute-1.amazonaws.com"))
+;=> {:target "ec2-90-27-11-202.compute-1.amazonaws.com.",
+;=>  :subdomain "api",
+;=>  :fieldtype "CNAME",
+;=>  :class com.ovh.ZoneStruct}
+
+;; Update a zone entry.
+
+(with-session ["SRXXXXX-OVH" "SECRET"]
+   (update-zone-entry "example.com" "api" "CNAME" "ec2-60-12-31-104.compute-1.amazonaws.com"))
+;=> {:target "ec2-60-12-31-104.compute-1.amazonaws.com.",
+;=>  :subdomain "api",
+;=>  :fieldtype "CNAME",
+;=>  :class com.ovh.ZoneStruct}
+
+;; Print zone entries.
+
+(with-session ["SRXXXXX-OVH" "SECRET"]
+  (print-zone-entries "example.com"))
+;=> SUBDOMAIN       FIELDTYPE  TARGET
+;=> --------------------------------------------------------------------------------
+;=>                 NS         dns15.ovh.net.
+;=>                 NS         ns15.ovh.net.
+;=>                 MX 10      aspmx3.googlemail.com.
+;=>                 MX 10      aspmx2.googlemail.com.
+;=>                 MX 5       alt2.aspmx.l.google.com.
+;=>                 MX 5       alt1.aspmx.l.google.com.
+;=>                 MX 1       aspmx.l.google.com.
+;=>                 A          213.186.33.5
+;=> api             CNAME      ec2-90-27-11-202.compute-1.amazonaws.com.
+
+;; Delete a zone entry.
+
+(with-session ["SRXXXXX-OVH" "SECRET"]
+  (delete-zone-entry "example.com" "api" "CNAME"))
+;=> nil
 
 ## License
 
