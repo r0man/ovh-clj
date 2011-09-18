@@ -30,22 +30,6 @@ Via Clojars: http://clojars.org/ovh.
 ;=>  :fieldtype "CNAME",
 ;=>  :class com.ovh.ZoneStruct}
 
-;; Print zone entries.
-
-(with-session ["SRXXXXX-OVH" "SECRET"]
-  (print-zone-entries "example.com"))
-;=> SUBDOMAIN       FIELDTYPE  TARGET
-;=> --------------------------------------------------------------------------------
-;=>                 NS         dns15.ovh.net.
-;=>                 NS         ns15.ovh.net.
-;=>                 MX 10      aspmx3.googlemail.com.
-;=>                 MX 10      aspmx2.googlemail.com.
-;=>                 MX 5       alt2.aspmx.l.google.com.
-;=>                 MX 5       alt1.aspmx.l.google.com.
-;=>                 MX 1       aspmx.l.google.com.
-;=>                 A          213.186.33.5
-;=> api             CNAME      ec2-90-27-11-202.compute-1.amazonaws.com.
-
 ;; Delete a zone entry.
 
 (with-session ["SRXXXXX-OVH" "SECRET"]
