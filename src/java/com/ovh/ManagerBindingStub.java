@@ -11565,6 +11565,8 @@ public class ManagerBindingStub extends org.apache.axis.client.Stub implements c
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "smsId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "user"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "pagingStart"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "pagingLimit"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -33448,7 +33450,7 @@ public class ManagerBindingStub extends org.apache.axis.client.Stub implements c
 }
     }
 
-    public com.ovh.TelephonySmsHistoryStruct[] telephonySmsUserHistory(java.lang.String login, java.lang.String password, java.lang.String smsAccount, int smsId, int pagingStart, int pagingLimit, java.lang.String sortField, java.lang.String sortOrder, java.lang.String tag) throws java.rmi.RemoteException, com.ovh.FailureType {
+    public com.ovh.TelephonySmsHistoryStruct[] telephonySmsUserHistory(java.lang.String login, java.lang.String password, java.lang.String smsAccount, int smsId, java.lang.String user, int pagingStart, int pagingLimit, java.lang.String sortField, java.lang.String sortOrder, java.lang.String tag) throws java.rmi.RemoteException, com.ovh.FailureType {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -33461,7 +33463,7 @@ public class ManagerBindingStub extends org.apache.axis.client.Stub implements c
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {login, password, smsAccount, new java.lang.Integer(smsId), new java.lang.Integer(pagingStart), new java.lang.Integer(pagingLimit), sortField, sortOrder, tag});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {login, password, smsAccount, new java.lang.Integer(smsId), user, new java.lang.Integer(pagingStart), new java.lang.Integer(pagingLimit), sortField, sortOrder, tag});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

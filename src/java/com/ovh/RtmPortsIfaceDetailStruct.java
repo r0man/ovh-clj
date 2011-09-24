@@ -12,7 +12,7 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
 
     private java.lang.String procname;
 
-    private int uid;
+    private java.lang.String uid;
 
     private int pid;
 
@@ -28,7 +28,7 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
     public RtmPortsIfaceDetailStruct(
            java.lang.String port,
            java.lang.String procname,
-           int uid,
+           java.lang.String uid,
            int pid,
            java.lang.String cmdline,
            java.lang.String exe,
@@ -88,7 +88,7 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
      * 
      * @return uid
      */
-    public int getUid() {
+    public java.lang.String getUid() {
         return uid;
     }
 
@@ -98,7 +98,7 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
      * 
      * @param uid
      */
-    public void setUid(int uid) {
+    public void setUid(java.lang.String uid) {
         this.uid = uid;
     }
 
@@ -200,7 +200,9 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
             ((this.procname==null && other.getProcname()==null) || 
              (this.procname!=null &&
               this.procname.equals(other.getProcname()))) &&
-            this.uid == other.getUid() &&
+            ((this.uid==null && other.getUid()==null) || 
+             (this.uid!=null &&
+              this.uid.equals(other.getUid()))) &&
             this.pid == other.getPid() &&
             ((this.cmdline==null && other.getCmdline()==null) || 
              (this.cmdline!=null &&
@@ -228,7 +230,9 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
         if (getProcname() != null) {
             _hashCode += getProcname().hashCode();
         }
-        _hashCode += getUid();
+        if (getUid() != null) {
+            _hashCode += getUid().hashCode();
+        }
         _hashCode += getPid();
         if (getCmdline() != null) {
             _hashCode += getCmdline().hashCode();
@@ -264,7 +268,7 @@ public class RtmPortsIfaceDetailStruct  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("uid");
         elemField.setXmlName(new javax.xml.namespace.QName("", "uid"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
